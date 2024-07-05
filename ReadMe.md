@@ -1,4 +1,4 @@
-# Repository ReadMe
+# LangChain Demo
 
 ## Overview
 This repository contains a collection of Python scripts that demonstrate the use of generative AI in various applications. The scripts showcase the use of LangChain, OpenAI, and other AI libraries to build intelligent agents and perform complex tasks.
