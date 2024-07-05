@@ -19,7 +19,8 @@ Some scripts require input data, such as PDFs, PowerPoints or SQL databases. I r
 
 ## ChatGPT API & Ollama
 Most of the scripts in this repository use either OpenAI models through their API or are dependent on Ollama.
-To use the OpenAI models, generate your own API key on the OpenAI website and connect billing information.
+To use the OpenAI models, generate your own API key on the OpenAI website and connect billing information. 
+Then paste your key in a `.env` file, which should be hidden from Git.
 Ollama is an open source technology to run LLM's locally. It provides access to a variety of open source models developed by Meta and Microsoft, 
 most notably the LLaMa series. Download it from here: [Ollama](https://ollama.com/)
 

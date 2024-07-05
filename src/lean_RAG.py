@@ -14,15 +14,15 @@ openai.api_key = os.environ["OPENAI_API_KEY"]
 
 
 # Load PDF
-loader = UnstructuredPDFLoader("examle_data/Notulen_Vergadering_van_eigenaars_11-03-2024.pdf")
+loader = UnstructuredPDFLoader("../examle_data/Notulen_Vergadering_van_eigenaars_11-03-2024.pdf")
 pages = loader.load_and_split()
 
 # Load another PDF
-loader = UnstructuredPDFLoader("examle_data/5611XD_97-20240629-071044.pdf")
+loader = UnstructuredPDFLoader("../examle_data/5611XD_97-20240629-071044.pdf")
 pages += loader.load_and_split()
 
 # Load a PowerPoint document
-loader = UnstructuredPowerPointLoader("examle_data/process_mining_example.pptx")
+loader = UnstructuredPowerPointLoader("../examle_data/process_mining_example.pptx")
 pages += loader.load_and_split()
 
 # Create the model
