@@ -36,7 +36,6 @@ input_str = """
     Beste sir/madam,
 
     I would like to know when I will receive my parcel. The order number is 123456.
-    If I don't get my package soon I will lose my mind! 
 
     Looking forward to your answer!
 
