@@ -20,4 +20,4 @@ agent = create_pandas_dataframe_agent(OpenAI(model='gpt-3.5-turbo-instruct', tem
                                       verbose=True,
                                       allow_dangerous_code=True)
 
-agent.invoke("What proportion of passengers had three or more siblings?")
+agent.invoke("What is the correlation between the fare and the rate of survival?")

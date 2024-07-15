@@ -11,55 +11,54 @@ from langchain_community.document_loaders import UnstructuredPDFLoader, Unstruct
 load_dotenv()
 openai.api_key = os.environ["OPENAI_API_KEY"]
 
-# # Initialize pages
-# pages = []
-#
-# # Define the directory
-# directory = 'Vereijken_input'
-#
-# # Loop over all files in the directory
-# for filename in glob.glob(os.path.join(directory, '*')):
-#     # Check the file extension
-#     if filename.endswith('.pdf'):
-#         loader = UnstructuredPDFLoader(filename)
-#         print(f"Processing: {filename}")
-#     elif filename.endswith('.pptx'):
-#         loader = UnstructuredPowerPointLoader(filename)
-#         print(f"Processing: {filename}")
-#     else:
-#         continue  # Skip files with other extensions
-#
-#     # Load and split the file, then add to pages
-#     pages += loader.load_and_split()
-#
-# print(f"Length of pages: {len(pages)}")
-#
-# # Add the website
-# urls = [
-#     "https://vereijkenkwekerijen.nl/?lang=en",
-# ]
-#
-# # collect data using selenium url loader
-# loader = SeleniumURLLoader(urls=urls)
-# pages += loader.load_and_split()
-#
-# print(f"Length of pages after URL loader: {len(pages)}")
-#
-# # Light preprocessing
-# for page in pages:
-#     page.page_content = str(page.page_content).replace("\\n", " ")\
-#                                               .replace("\\t", " ")\
-#                                               .replace("\n", " ")\
-#                                               .replace("\t", " ")
-#
-# print(f"Length of pages after preprocessing: {len(pages)}")
-#
-# # Create the vectorstore
-# vectorstore = FAISS.from_documents(pages, OpenAIEmbeddings())
-#
-# # Save the vectorstore
-# vectorstore.save_local('vector_stores/vereijken.faiss')
+# Initialize pages
+pages = []
 
+# Define the directory
+directory = 'Vereijken_input'
+
+# Loop over all files in the directory
+for filename in glob.glob(os.path.join(directory, '*')):
+    # Check the file extension
+    if filename.endswith('.pdf'):
+        loader = UnstructuredPDFLoader(filename)
+        print(f"Processing: {filename}")
+    elif filename.endswith('.pptx'):
+        loader = UnstructuredPowerPointLoader(filename)
+        print(f"Processing: {filename}")
+    else:
+        continue  # Skip files with other extensions
+
+    # Load and split the file, then add to pages
+    pages += loader.load_and_split()
+
+print(f"Length of pages: {len(pages)}")
+
+# Add the website
+urls = [
+    "https://vereijkenkwekerijen.nl/?lang=en",
+]
+
+# collect data using selenium url loader
+loader = SeleniumURLLoader(urls=urls)
+pages += loader.load_and_split()
+
+print(f"Length of pages after URL loader: {len(pages)}")
+
+# Light preprocessing
+for page in pages:
+    page.page_content = str(page.page_content).replace("\\n", " ")\
+                                              .replace("\\t", " ")\
+                                              .replace("\n", " ")\
+                                              .replace("\t", " ")
+
+print(f"Length of pages after preprocessing: {len(pages)}")
+
+# Create the vectorstore
+vectorstore = FAISS.from_documents(pages, OpenAIEmbeddings())
+
+# Save the vectorstore
+vectorstore.save_local('vector_stores/vereijken.faiss')
 
 # Sections of example case study
 sections = [
@@ -126,7 +125,7 @@ reduced 15-min intra-day baseline forecasting error
 
 # Light preprocessing
 for i in range(len(sections)):
-    sections[i] = sections[i].replace("\\n", " ")\
+    sections[i] = sections[i].replace("\\n", " ") \
                              .replace("\\t", " ") \
                              .replace("\n", " ") \
                              .replace("\t", " ") \

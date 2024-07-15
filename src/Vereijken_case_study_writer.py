@@ -105,16 +105,16 @@ the sections too much, as they are already correct. You are only allowed to dele
 
 Please find the four sections below:
 
-Section 1: Client Profile
+### Section 1: Client Profile
 {section1}
 
-Section 2: Unique Challenges and Problems
+### Section 2: Unique Challenges and Problems
 {section2}
 
-Section 3: Bright Cape's Approach
+### Section 3: Bright Cape's Approach
 {section3}
 
-Section 4: Results and Impact
+### Section 4: Results and Impact
 {section4}
 
 Also write a good consulting title for the piece. Here are some examples of good titles:
